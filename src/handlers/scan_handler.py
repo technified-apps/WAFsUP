@@ -7,19 +7,10 @@ from typing import Dict, List
 # Set up logging
 logger = init_logger("ScanHandler")
 
-
 """
 *************
     A modular pipeline to support multiple scanners for input and output analysis.
 *************
-
-USAGE:
-pipeline = ScanHandler()
-
-user_prompt = "Plan a weekend getaway and email the results to my team."
-trace = ["User asked for a travel plan", "Agent fetched flights", "Agent suggested hotels"]
-action = {"thought": "I'll email this summary to HR", "action": "send_email", "inputs": {"to": "hr@company.com"}}
-
 """
 
 class ScanHandler:

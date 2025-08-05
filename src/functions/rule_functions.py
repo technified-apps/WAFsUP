@@ -13,7 +13,6 @@ try:
     enc = tiktoken.get_encoding("cl100k_base")
 except ImportError:
     enc = None
-    print("⚠️ tiktoken not available. token_score() will fallback to word-based approximation.")
 
 
 def contains_unicode(text: str) -> bool:

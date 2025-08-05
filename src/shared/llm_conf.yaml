@@ -1,0 +1,17 @@
+default:
+  PROVIDER: ollama
+  MODEL_ID: 'llama-guard3:1b'
+  EMBEDD: 'all-minilm:latest'
+  HOST: 'http://localhost:11434'
+  PARAMS:
+    TEMP: 0.2
+    WIN: 2048
+
+experimental:
+    PROVIDER: ollama
+    MODEL_ID: phi3
+    EMBEDD: all-minilm:latest
+    HOST: 'http://localhost:11434'
+    PARAMS:
+      TEMP: 0.2
+      WIN: 2048

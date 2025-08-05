@@ -1,0 +1,81 @@
+patterns:
+  - name: hate_speech
+    meta:
+      description: "Attempts to probe or expose the model's internal configuration or prompts"
+      threat_level: 5
+      threshold: 0.80
+      category: "content_safety"
+    strings:
+      mild: [
+            "homo", "jew", "jewish", "muslim", "muslims", "queer", "black", "whitey", "cracker"]
+      moderate: [
+            "homophobic", "racist", "anti-semitic", "islamophobe", "homophobe",
+            "bigot", "xenophobe", "hate speech", "antisemitism"]
+      severe: [
+            "chink", "nigga", "nigger", "coon", "negro", "faggot", "dyke",
+            "nazi", "jap", "sandbar", "mongoloid", "furfag", "coont",
+            "wetback", "spic", "gook", "kike", "towelhead", "raghead" ]
+
+
+  - name: profanity_vulgar
+    meta:
+      description: "Attempts to probe or expose the model's internal configuration or prompts"
+      threat_level: 5
+      threshold: 0.80
+      category: "content_safety"
+    strings:
+      mild: [
+            "arse", "ass", "damn", "dick", "piss", "pissed", "crap", "hell", "bugger", "bloody", "bollocks", "wuss"]
+      moderate: [
+            "bastard", "bitch", "fuck", "fucking", "fuckin", "motherfucker", "shit",
+            "asshole", "pussy", "penis", "vagina", "cock", "boobs", "tits", "titties",
+            "douchebag", "prick", "whore", "slut", "jackass", "balls", "nuts", "schlong" ]
+      severe: [
+            "cunt", "dildo", "blowjob", "cum", "ejaculate", "jerk-off", "masturbate",
+            "wanker", "shag", "twat", "ballsack", "boner", "muff", "nutsack",
+            "sucker", "lick", "licker", "fuckface", "dumbass", "fuckhead",
+            "shithead", "shitface", "cumslut", "cumbucket", "semen", "pecker"  ]
+
+  - name: sexual_explicit
+    meta:
+      description: "Attempts to probe or expose the model's internal configuration or prompts"
+      threat_level: 5
+      threshold: 0.80
+      category: "content_safety"
+    strings:
+      mild: [
+            "porn", "smut", "erotic", "nudes", "naked", "sexy", "kinky", "innuendo"
+        ]
+      moderate: [
+            "anal", "clitoris", "clit", "pornography", "orgasm",
+            "redtube", "xxx", "hardcore", "fetish", "stripper", "bondage", "lingerie", "dildo"
+        ]
+      severe: [
+            "buttrape", "anilingus", "cumshot", "rape", "molest",
+            "cumdumpster", "cumguzzler", "gangbang", "necrophilia",
+            "pedo", "pedophile", "pedophilia", "child predator",
+            "loli", "lolicon", "cub", "bestiality", "incest", "rape fantasy"
+        ]
+
+
+  - name: violence_harmful
+    meta:
+      description: "Attempts to probe or expose the model's internal configuration or prompts"
+      threat_level: 5
+      threshold: 0.80
+      category: "content_safety"
+    strings:
+      mild: [
+            "die", "shoot", "kill", "stab", "punch", "beat", "slap", "attack", "hurt"
+        ]
+      moderate: [
+            "bomb", "bombing", "bombed", "shooting",
+            "cliff", "bridge", "assault", "murder", "strangle", "torture", "execute", "blow up"
+        ]
+      severe': [
+            "terrorist", "terrorism",
+            "kys", "i want to die", "cut myself", "fuck life",
+            "suicide", "hang myself", "self-harm", "slit my wrists", "end it all"
+        ]
+
+

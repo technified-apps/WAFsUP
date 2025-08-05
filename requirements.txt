@@ -1,0 +1,35 @@
+
+
+# Embedding model and semantic similarity
+sentence-transformers
+numpy
+faiss-cpu
+
+# Data models and validation
+pydantic
+
+# Optional: for clustering, anomaly detection, etc.
+#scikit-learn
+
+pyyaml
+#pyahocorasick
+spacy
+langchain
+ollama
+nemoguardrails
+annoy
+llama_index
+chromadb
+PyPDF2 
+Pillow
+python-magic
+docx2txt
+#pptx
+markdown
+bs4
+langchain_community
+transformers
+torch
+aiofiles
+tiktoken 
+presidio_analyzer

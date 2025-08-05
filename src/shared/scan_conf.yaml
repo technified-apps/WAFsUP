@@ -1,0 +1,81 @@
+scanners:
+  # ----------------------------------------------------------------
+  # PII & Data Leakage Policies
+  # ----------------------------------------------------------------
+  - id: 1
+    name: "Block High-Confidence PII (Email, Phone, etc)"
+    active: False
+    action: 1 # 1 OBSERVE 0 BLOCK
+    ingress: True
+    egress: True
+    message: "Interaction blocked due to sensitive data (PII)."
+    threshold: 0.75
+    block_score: 2
+    scan_entities:
+      - USER_PROMPT
+    pii_entities:
+      - EMAIL_ADDRESS
+      - PHONE_NUMBER
+      - "PERSON" 
+      - "SECURITY_ACCESS_CODES"
+      - "CREDIT_CARD"
+      - "PASSWORD"
+      - "CRYPTO" 
+      - "IP_ADDRESS"
+      - "SEXUAL_PREFERENCE" 
+      - "RACE"
+      - "SWIFT_CODE"
+  # ----------------------------------------------------------------
+  # Content & Behavior Policies
+  # ----------------------------------------------------------------
+  - id: 2
+    name: "Perform a Regex Scanner for known attacks"
+    active: False
+    action: 1 # OBSERVE 0 BLOCK
+    ingress: True
+    egress: False
+    message: "Response blocked for security reasons."
+    threshold: 0.95
+    block_score: 2
+    scan_entities:
+      - USER_PROMPT
+
+  - id: 3
+    name: "Observe Profanity for content safety"
+    active: False
+    action: 1 # OBSERVE
+    ingress: True
+    egress: False
+    message: "Profane language was detected."
+    threshold: 0.88
+    block_score: 2
+    scan_entities:
+      - USER_PROMPT
+  # ----------------------------------------------------------------
+  # File Upload
+  # ----------------------------------------------------------------
+  - id: 4
+    name: "Scan uploaded files for prompt and code injection"
+    active: True
+    action: 1 # OBSERVE 0 BLOCK
+    ingress: True
+    egress: False
+    message: "Response blocked for security reasons."
+    threshold: 0.95
+    block_score: 2
+    scan_entities:
+      - USER_FILE
+  # ----------------------------------------------------------------
+  # Similarity check
+  # ----------------------------------------------------------------
+  - id: 5
+    name: "Perform a similarity check for known attacks"
+    active: False
+    action: 1 # OBSERVE 0 BLOCK
+    ingress: True
+    egress: False
+    message: "Response blocked for security reasons."
+    threshold: 0.95
+    block_score: 2
+    scan_entities:
+      - USER_PROMPT
